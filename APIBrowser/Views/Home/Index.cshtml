@@ -1,0 +1,15 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+Keys:
+<ul>
+    @foreach (var s in Model)
+    {
+        @Html.ActionLink(s, "Browse", new { key = s });
+    }
+</ul>
