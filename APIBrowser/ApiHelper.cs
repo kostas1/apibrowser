@@ -18,7 +18,7 @@ namespace APIBrowser
 
         internal static IDbConnection Init()
         {
-            var connection = new SqlConnection(ConfigurationManager.ConnectionStrings["ConnectionString"].ConnectionString);
+            var connection = new SqlConnection(ConfigurationManager.AppSettings["SQLSERVER_CONNECTION_STRING"]);
 
             connection.Execute(@"
                 IF NOT EXISTS (SELECT * FROM sys.tables
